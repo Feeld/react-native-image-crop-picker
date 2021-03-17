@@ -885,7 +885,9 @@ RCT_EXPORT_METHOD(openCropper:(NSDictionary *)options
         cropVC.delegate = self;
         
         cropVC.doneButtonTitle = [self.options objectForKey:@"cropperChooseText"];
+        cropVC.doneButtonColor = UIColor.whiteColor;
         cropVC.cancelButtonTitle = [self.options objectForKey:@"cropperCancelText"];
+        cropVC.cancelButtonColor = UIColor.whiteColor;
         
         cropVC.modalPresentationStyle = UIModalPresentationFullScreen;\
         

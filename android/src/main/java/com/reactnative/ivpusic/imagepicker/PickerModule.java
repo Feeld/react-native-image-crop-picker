@@ -87,6 +87,8 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
     private String cropperToolbarTitle = null;
     private String cropperToolbarWidgetColor = null;
 
+    private boolean hasPreviousPhoto = false;
+
     private int width = 0;
     private int height = 0;
 
@@ -133,6 +135,7 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
         showCropFrame = !options.hasKey("showCropFrame") || options.getBoolean("showCropFrame");
         hideBottomControls = options.hasKey("hideBottomControls") && options.getBoolean("hideBottomControls");
         enableRotationGesture = options.hasKey("enableRotationGesture") && options.getBoolean("enableRotationGesture");
+        hasPreviousPhoto = options.hasKey("hasPreviousPhoto") && options.getBoolean("hasPreviousPhoto");
         disableCropperColorSetters = options.hasKey("disableCropperColorSetters") && options.getBoolean("disableCropperColorSetters");
         useFrontCamera = options.hasKey("useFrontCamera") && options.getBoolean("useFrontCamera");
         this.options = options;
@@ -640,6 +643,8 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
         options.setShowCropGrid(showCropGuidelines);
         options.setShowCropFrame(showCropFrame);
         options.setHideBottomControls(hideBottomControls);
+
+        options.setToolbarCancelDrawable(hasPreviousPhoto ? R.drawable.previous_photo : R.drawable.choose_another);
 
         if (cropperToolbarTitle != null) {
             options.setToolbarTitle(cropperToolbarTitle);

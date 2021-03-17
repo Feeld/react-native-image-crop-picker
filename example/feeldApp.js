@@ -126,13 +126,17 @@ export default class App extends Component {
       cropperToolbarTitle: "",
 
       // this is poor experience on Android
-      enableRotationGesture: true,
+      // enableRotationGesture: true,
 
-      hideBottomControls: true,
+      // hideBottomControls: true,
 
       // Confirm with design team if we want these on Android
       // showCropGuidelines: false,
       // showCropFrame: false,
+
+      // this works only for Android
+      // cropperCancelText: "Choose Another",
+      // cropperChooseText: isLastImage ? "Confirm" : "Next Photo",
 
       // this works only for iOS
       cropperCancelText: "Choose Another",
